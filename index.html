@@ -1,10 +1,183 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Mi Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tu Portfolio</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+background: #ffffff;
+color: #000000;
+}
+
+header {
+text-align: center;
+padding: 3rem 1rem;
+background: #ffffff;
+}
+
+h1 {
+font-size: 4rem;
+font-weight: 800;
+color: #000000;
+letter-spacing: -1px;
+line-height: 1;
+}
+
+.subtitle {
+font-size: 1.2rem;
+color: #666666;
+margin-top: 1rem;
+font-weight: 400;
+letter-spacing: 2px;
+text-transform: uppercase;
+}
+
+.video-container {
+flex: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 2rem 1rem;
+background: #ffffff;
+}
+
+video {
+max-width: 85%;
+max-height: 65vh;
+border-radius: 12px;
+box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+video:hover {
+transform: scale(1.01);
+box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+footer {
+text-align: center;
+padding: 2.5rem;
+background: #ffffff;
+border-top: 1px solid #f0f0f0;
+}
+
+.email-icon {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+width: 60px;
+height: 60px;
+background: #000000;
+border-radius: 50%;
+color: #ffffff;
+text-decoration: none;
+font-size: 1.8rem;
+transition: all 0.3s ease;
+cursor: pointer;
+border: none;
+}
+
+.email-icon:hover {
+background: #333333;
+transform: translateY(-3px);
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.icon-text {
+font-size: 0.9rem;
+color: #666666;
+margin-top: 0.8rem;
+font-weight: 500;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+h1 {
+font-size: 3rem;
+}
+
+.video-container {
+padding: 1.5rem 1rem;
+}
+
+video {
+max-width: 95%;
+}
+
+.email-icon {
+width: 55px;
+height: 55px;
+font-size: 1.6rem;
+}
+}
+
+@media (max-width: 480px) {
+h1 {
+font-size: 2.5rem;
+}
+
+.subtitle {
+font-size: 1rem;
+letter-spacing: 1px;
+}
+
+header {
+padding: 2.5rem 1rem;
+}
+
+footer {
+padding: 2rem;
+}
+
+.email-icon {
+width: 50px;
+height: 50px;
+font-size: 1.5rem;
+}
+}
+</style>
 </head>
 <body>
-    <h1>¡Hola! Soy [Tu Nombre]</h1>
-    <p>Desarrollador Web</p>
+<header>
+<h1>Tu Portfolio</h1>
+</header>
+
+<main class="video-container">
+<video autoplay muted loop controls>
+<source src="videos/Tuvideo.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</main>
+
+<footer>
+<!-- Email icon that triggers mailto without showing email in HTML -->
+<a onclick="window.location.href='mailto:tuportfolio@email.com'" class="email-icon">
+✉️
+</a>
+<div class="icon-text">Contact</div>
+</footer>
+
+<script>
+// Alternative cleaner approach
+document.querySelector('.email-icon').addEventListener('click', function(e) {
+e.preventDefault();
+window.location.href = 'mailto:tuportfolio@email.com';
+});
+
+// For accessibility
+document.querySelector('.email-icon').setAttribute('title', 'Send email to tuportfolio@email.com');
+document.querySelector('.email-icon').setAttribute('aria-label', 'Contact via email');
+</script>
 </body>
 </html>
